@@ -1,4 +1,5 @@
 // API Request non functional during testing, commented out to not break code.
+
 // var requestUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={bc3ebe5a0464504aa9d5eeb2d0ad5af1}'
 // function getApi(requestUrl) {
 //     fetch(requestUrl).then(function (response) {
@@ -8,6 +9,7 @@
 // }
 // getApi(requestUrl)
 
+//API still not working can not proceed until fixed, commented out to not break storage code.
 
 //Local storage is returning Null object
 let cityInput = document.getElementById('city')
@@ -33,7 +35,9 @@ cityHistory.innerHTML = localStorage.getItem('searchHistory');
 function reload() {
 searchHistory.innerHTML = localStorage.getItem('searchHistory');
 }
+//fixes issue of website not saving on refresh.
 reload();
+
 // GIVEN a weather dashboard with form inputs
 
 // WHEN I search for a city
