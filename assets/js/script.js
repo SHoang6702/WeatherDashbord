@@ -1,8 +1,11 @@
 // API Request non functional during testing, commented out to not break code.
 //link or key is potentially filled out wrong, lattitude and longitude are currently undefined so may be current issue with API, unsure how to make it search via lat and long.
 //need to reread the api documentation to find solution
+var lon = 0
+var lat = 0
+var apiKey = '7cced79f0ce1da9ff3598003fe1b9f85'
 
-var requestUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={7cced79f0ce1da9ff3598003fe1b9f85}'
+var requestUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={apiKey}'
 function getApi(requestUrlArg) {
     fetch(requestUrlArg).then(function (response) {
         console.log(response)
