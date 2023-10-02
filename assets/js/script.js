@@ -3,17 +3,40 @@
 //need to reread the api documentation to find solution
 
 var requestUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={bc3ebe5a0464504aa9d5eeb2d0ad5af1}'
-function getApi(requestUrl) {
-    fetch(requestUrl).then(function (response) {
+function getApi(requestUrlArg) {
+    fetch(requestUrlArg).then(function (response) {
         console.log(response)
+        if (response.status === 200) {
+        console.log(response.status);
+        }
         return response.json();
     })
 }
 getApi(requestUrl)
 
-//getting status 401 unauthorized, issue with API key
+//getting status 401 unauthorized, issue with API key, further testing required.
 
-//API still not working can not proceed until fixed, commented out to not break storage code.
+//API still not working can not proceed until fixed, commented out to not break storage code. (Working but unauthorized)
+
+//!!Below code is from class notes to use as an example to debug API issues!!
+
+// var requestUrl = 'https://api.github.com/orgs/nodejs/repos?per_page=5';
+
+// var responseText = document.getElementById('response-text');
+
+// function getApi(requestUrlArg) {
+//   fetch(requestUrlArg).then(function (response) {
+//     console.log(response);
+//     if (response.status === 200) {
+//       responseText.textContent = response.status;
+//     }
+//     return response.json();
+//   });
+// }
+
+// getApi(requestUrl);
+
+//!!Above code is from class notes to use as an example to debug API issues!!
 
 //Local storage is returning Null object (fixed, error was a typo)
 let cityInput = document.getElementById('city')
