@@ -22,13 +22,18 @@ function (event) {
   //code below non functional innerHTML error (fixed, thanks to typo)
   searchHistory.innerHTML = localStorage.getItem('searchHistory');
 });
+//nonfunction below, experimental
 let historyButton = document.getElementById('searchHistory');
 historyButton.addEventListener('click',
 function (event) {
 const cityHistory = document.querySelector('#city')
 cityHistory.innerHTML = localStorage.getItem('searchHistory');
 });
- 
+// note to self: history is not saving on refresh, needs repair. (fixed, but button is still not functional, still only saving 1 city.)
+function reload() {
+searchHistory.innerHTML = localStorage.getItem('searchHistory');
+}
+reload();
 // GIVEN a weather dashboard with form inputs
 
 // WHEN I search for a city
