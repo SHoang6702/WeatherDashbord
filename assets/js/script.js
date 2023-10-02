@@ -15,14 +15,20 @@ let searchButton = document.getElementById('searchButton')
 searchButton.addEventListener('click', 
 function (event) {
   const cityHistory = document.querySelector('#city');
-  const searchedHistory = document.querySelector('#searchHistory');
-  //only saves one city
+  const searchHistory = document.querySelector('#searchHistory');
+  //only saves one city, JSON.stringify might work, but can't figure it out.
   localStorage.setItem('searchHistory', cityHistory.value);
   console.log(localStorage.getItem('searchHistory'));
-  //code below non functional
-  searchedHistory.innerHTML = localStorage.getItem('searchHistory');
+  //code below non functional innerHTML error (fixed, thanks to typo)
+  searchHistory.innerHTML = localStorage.getItem('searchHistory');
 });
-
+let historyButton = document.getElementById('searchHistory');
+historyButton.addEventListener('click',
+function (event) {
+const cityHistory = document.querySelector('#city')
+cityHistory.innerHTML = localStorage.getItem('searchHistory');
+});
+ 
 // GIVEN a weather dashboard with form inputs
 
 // WHEN I search for a city
@@ -35,4 +41,4 @@ function (event) {
 // THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity (WIP)
 
 // WHEN I click on a city in the search history
-// THEN I am again presented with current and future conditions for that city 
+// THEN I am again presented with current and future conditions for that city (WIP) (Semi complete, adds city to search history, but not as a button)
