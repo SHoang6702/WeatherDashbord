@@ -2,14 +2,16 @@
 //link or key is potentially filled out wrong, lattitude and longitude are currently undefined so may be current issue with API, unsure how to make it search via lat and long.
 //need to reread the api documentation to find solution
 
-// var requestUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={bc3ebe5a0464504aa9d5eeb2d0ad5af1}'
-// function getApi(requestUrl) {
-//     fetch(requestUrl).then(function (response) {
-//         console.log(response)
-//         return response.json();
-//     })
-// }
-// getApi(requestUrl)
+var requestUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={bc3ebe5a0464504aa9d5eeb2d0ad5af1}'
+function getApi(requestUrl) {
+    fetch(requestUrl).then(function (response) {
+        console.log(response)
+        return response.json();
+    })
+}
+getApi(requestUrl)
+
+//getting status 401 unauthorized, issue with API key
 
 //API still not working can not proceed until fixed, commented out to not break storage code.
 
