@@ -4,8 +4,9 @@
 var lon = 0
 var lat = 0
 var apiKey = '7cced79f0ce1da9ff3598003fe1b9f85'
-
 var requestUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={apiKey}'
+
+// var requestUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={7cced79f0ce1da9ff3598003fe1b9f85}'
 function getApi(requestUrlArg) {
     fetch(requestUrlArg).then(function (response) {
         console.log(response)
